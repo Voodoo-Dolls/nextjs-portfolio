@@ -8,13 +8,12 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
+      <ul className="pl-2 list-disc">
+        <li>React/NextJS</li>
         <li>JavaScript</li>
-        <li>React</li>
+        <li>MySQL</li>
+        <li>Figma</li>
+        <li>Prismic CMS</li>
       </ul>
     ),
   },
@@ -22,22 +21,12 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+      <ul className="pl-2 list-disc">
+        <li>Diploma: Digital Media & IT</li>
+        <li>Northern Alberta Institute of Technology, Edmonton, AB</li>
       </ul>
     ),
-  },
-  {
-    title: "Certifications",
-    id: "certifications",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
-      </ul>
-    ),
-  },
+  }
 ];
 
 const AboutSection = () => {
@@ -52,17 +41,15 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+      <div className="gap-8 px-4 py-8 md:grid md:grid-cols-2 xl:gap-16 sm:py-16 xl:px-16">
+        <Image src="/images/bubble.webp" width={500} height={500} alt="A beautiful shot of a frozen bubble." />
+        <div className="flex flex-col h-full mt-4 text-left md:mt-0">
+          <h2 className="mb-4 text-4xl font-bold text-white">About Me</h2>
+          <p className="mb-4 text-base lg:text-lg">
+            Hey! My name is Michael, and I am a Front-End Developer passionate about creating interactive and responsive web applications. I love building web applications using NextJS, but I am also knowledgeable in WordPress, PHP, and JQuery if your project requires those skills.
+          </p>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            My two big hobbies are photography (mainly outdoor) and gaming. The Frozen Bubble is one of my favourite photos I have captured. If I&apos;m not too busy on the weekends, I play games with my friends; we&apos;re currently playing &quot;The Forever Winter.&quot; If you&apos;re also a big gamer, let me know what you play!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -70,7 +57,7 @@ const AboutSection = () => {
               active={tab === "skills"}
             >
               {" "}
-              Skills{" "}
+              Top Skills{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
@@ -78,13 +65,6 @@ const AboutSection = () => {
             >
               {" "}
               Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
             </TabButton>
           </div>
           <div className="mt-8">
